@@ -28,7 +28,7 @@ The system contains **three agents**:
 - Each agent is an instance with a defined purpose and behavior.
 
 ### ✅ Coordination & Handoff
-- The `Coordinator Agent` takes input and delegates tasks using the `handoff()` method.
+- The Coordinator Agent takes user input and intelligently delegates it to either the Greeting Agent or the Joke Agent using the built-in handoff mechanism provided by the OpenAI Agent SDK.
 - Based on the user's intent, the task is routed to either the Joke or Greeting agent.
 
 ### ✅ Tools
