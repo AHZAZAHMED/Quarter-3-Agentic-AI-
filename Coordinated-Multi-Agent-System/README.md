@@ -84,7 +84,7 @@ The system contains **three agents**:
     uv run main.py
     ```
 5. **Interact with the system**:
-   - Input: `"hi"` → Greeting Agent replies with `Assalamu Alaikum`.
+   - Input: `"hi"` → Greeting Agent replies with `Salam how may i help you?`.
    - Input: `"tell me a joke"` → Joke Agent calls the Joke API and replies.
 
 ---
