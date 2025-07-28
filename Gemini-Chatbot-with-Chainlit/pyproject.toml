@@ -1,0 +1,21 @@
+[project]
+name = "gemini-chatbot-with-chainlit"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "AHZAZ AHMED", email = "ahzazahmed159@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "chainlit>=2.6.2",
+    "openai-agents>=0.2.3",
+    "python-dotenv>=1.1.1",
+]
+
+[project.scripts]
+gemini-chatbot-with-chainlit = "gemini_chatbot_with_chainlit:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

@@ -1,0 +1,35 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+.env
+
+# Chainlit metadata and local files
+.files/
+.chainlit/
+
+# IDE/editor specific
+.vscode/
+*.code-workspace
+
+# Python-specific
+*.log
+*.lock
+*.db
+*.sqlite3
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Uvicorn/UV specific
+uv.lock
+
+# Chainlit session files
+chainlit.md
+
+# dotenv
+.env
