@@ -1,50 +1,72 @@
-# Gemini Chatbot with Chainlit
+# Gemini-Powered Chatbot using Chainlit UI
 
-This project is an interactive AI chatbot built using Google's Gemini model and the Chainlit framework. The chatbot is designed to provide contextual, multi-turn conversations, remembering previous user queries and responding accordingly. It leverages asynchronous programming for efficient handling of user messages and API calls. The core logic uses `Runner.run`, which executes the agent asynchronously to ensure fast and responsive interactions.
+This project is an AI-powered chatbot built with [OpenAI Agent SDK](https://github.com/openai/openai-agents), integrated into a [Chainlit](https://docs.chainlit.io/) interface and powered by Gemini-2.0-Flash.
 
-## What You'll Learn
+---
 
-- **Chainlit:**  
-  Chainlit is a Python framework for building conversational AI applications with ease. You'll learn how to use Chainlit to manage chat sessions, handle user messages, and maintain conversation history.
+## ✨ Features
 
-- **Asynchronous Programming:**  
-  The project uses Python's `async` and `await` features, along with `Runner.run` to execute the agent asynchronously. This allows the chatbot to handle multiple user requests efficiently without blocking the main application.
+- Gemini model integration via Google Generative Language API.
+- Clean UI with Chainlit.
+- Chat history tracking in session.
+- Asynchronous agent execution using `Runner.run()`.
 
-- **Integrating Gemini API:**  
-  You'll see how to connect to the Gemini language model using API keys and how to structure prompts and conversation history for context-aware responses.
+---
 
-## How to Run This Project
+## 🛠️ Setup Instructions
 
-1. **Clone the Repository**
-   ```sh
-   git clone <repository-url>
-   cd Gemini-Chatbot-with-Chainlit
-   ```
+### Step 1: Initialize Project
 
-2. **Set Up a Virtual Environment**
-   ```sh
-   python -m venv .venv
-   .venv\Scripts\activate
-   ```
+```bash
+uv init chatbot-gemini-ui
+```
 
-3. **Install Dependencies**
-   ```sh
-   pip install -r requirements.txt
-   ```
+### Step 2: Install Required Packages
 
-4. **Configure Environment Variables**
-   - Create a `.env` file in the project root.
-   - Add your Gemini API key:
-     ```
-     GEMINI_API_KEY=your_gemini_api_key_here
-     ```
+```bash
+uv add chainlit
+uv add openai-agents
+uv add python-dotenv
+```
 
-5. **Run the Chatbot**
-   ```sh
-   chainlit run chatbot.py
-   ```
-   - The app will be available at [http://localhost:8000](http://localhost:8000).
+### Step 3: Test Chainlit Installation
 
-## Author
+```bash
+uv run chainlit hello
+```
 
-**AHZAZ AHMED**
+### Step 4: Activate Virtual Environment (Windows)
+
+```bash
+.venv\Scripts\activate
+```
+
+### Step 5: Add `.env` File
+
+Create a `.env` file in the root folder and add your Gemini API key:
+
+```env
+GEMINI_API_KEY=your_gemini_api_key_here
+```
+
+---
+
+## 🚀 Running the Chatbot
+
+Create a file `chatbot.py` and write the chatbot logic. Then run it using:
+
+```bash
+uv run chainlit run chatbot.py
+```
+
+---
+
+
+## 🧩 Technologies Used
+
+- Chainlit
+- OpenAI Agents SDK
+- Gemini 2.0 Flash
+- Python `dotenv`
+- `uv` (Universal Package Manager)
+
