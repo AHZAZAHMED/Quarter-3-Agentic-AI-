@@ -3,9 +3,13 @@ from dotenv import load_dotenv
 import os
 import requests
 
+ 
 load_dotenv()
 
-@function_tool
+@function_tool(
+    description="Fetches a joke from the JokeAPI.",
+    failure_message="Failed to fetch joke. Please try again later."
+)
 def get_joke():
     """
     Fetches Joke from the api.
@@ -20,6 +24,8 @@ def get_joke():
 # Load the environment variable for the Gemini API key
 gemini_api_key = os.getenv("GEMINI_API_KEY")
 
+if not gemini_api_key:
+    raise ValueError("GEMINI_API_KEY environment variable is not set. Please set it in your .env file.")
 # Initialize the OpenAIChatCompletionModel with the Gemini API key
 provider = AsyncOpenAI(
     api_key= gemini_api_key,
@@ -57,7 +63,7 @@ corrdinator_agent = Agent(
 # Getting user input
 user_input = input("Enter your question: ")
 
-# Running the agent with the user inpu
+# Running the agent with the user input
 agent_result = Runner.run_sync(corrdinator_agent, user_input)
 
 print(agent_result.final_output)

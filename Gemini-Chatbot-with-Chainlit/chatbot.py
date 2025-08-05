@@ -1,10 +1,12 @@
-from agents import Agent , AsyncOpenAI , OpenAIChatCompletionsModel , Runner
+from agents import Agent , AsyncOpenAI , OpenAIChatCompletionsModel , Runner 
 from dotenv import load_dotenv
 import os
 import chainlit as cl
+from openai.types.responses import ResponseTextDeltaEvent # Add this import
+from rich import print ,pretty
 
 load_dotenv()
-
+pretty.install()
 gemini_api_key = os.getenv("GEMINI_API_KEY")
 
 if not gemini_api_key:
@@ -37,6 +39,7 @@ async def start_chat():
     await cl.Message(content="Assalamualikum! How can I assist you today?").send()
     cl.user_session.set("history", [])
 
+# asyncchrounus 
 @cl.on_message
 async def reply(message : cl.Message):
     history = cl.user_session.get("history")
@@ -46,6 +49,5 @@ async def reply(message : cl.Message):
 
     history.append({"role":"assistant", "content": response.final_output})
     cl.user_session.set("history", history)
-    print(history)
     await cl.Message(content=response.final_output).send()
     
