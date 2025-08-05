@@ -1,0 +1,34 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+env/
+ENV/
+
+# Environment files (security!)
+.env
+
+# Chainlit cache or runtime files (optional)
+.chainlit/
+
+# Project-specific hidden or temp files
+.files/
+*.lock
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Python packaging
+*.egg-info/
+*.egg
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+
+# System logs
+*.log
