@@ -3,8 +3,11 @@ from dotenv import load_dotenv
 import os 
 import chainlit as cl 
 from  openai.types.responses import ResponseTextDeltaEvent
+from dataclasses import dataclass
 
-load_dotenv()
+@dataclass
+
+load_dotenv()               
 
 gemini_api_key = os.getenv("GEMINI_API_KEY")
 
@@ -18,7 +21,7 @@ provider = AsyncOpenAI(
 
 @function_tool
 def getweather(location : str) -> str:
-    """
+    """ 
       Get the location form user input and return the location with the string defined
     """
     return f"Weather today in {location} is very hot"
